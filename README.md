@@ -8,7 +8,7 @@ by Gavin h8r1dx4@gmail.com
 
 ---
 
-##PREREQUISITES
+## PREREQUISITES
 
 ---
 1. All routers need a user called backups with full permissions.
@@ -18,7 +18,7 @@ by Gavin h8r1dx4@gmail.com
 
 ---
 
-##SETUP
+## SETUP
 
 ---
 
@@ -31,7 +31,7 @@ by Gavin h8r1dx4@gmail.com
 
 ---
 
-##LOGS
+## LOGS
 
 ---
 
