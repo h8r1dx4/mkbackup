@@ -12,12 +12,14 @@ echo `date`": ""Backups Start" >> $dir$date/log.txt
 for line in $filelines ; do
 	echo $line
 	echo 'Backup'
-	ssh backups@$line /system backup save name=[/system identity get name]
+	ssh backups@$line "/system backup save name=[/system identity get name]; /export verbose file=[/system identity get name]"
 	VAR1=$?
-	wait 10
+	sleep 2
 
 	echo 'Copying Backup'
-	scp backups@$line:$line.backup $dir$date
+	mkdir -p $dir$date$line
+	scp backups@$line:$line.backup $dir$date$line
+	scp backups@$line:$line.rsc $dir$date$line
 	VAR2=$?
 	echo 'Done'
 	echo "Router :" $line "Backup Finished at :" `date` "Backup Status :" $VAR1 "Copy Status :" $VAR2 >> $dir$date/log.txt
