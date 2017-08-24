@@ -19,6 +19,8 @@ for line in $filelines ; do
 	echo 'Copying Backup'
 	mkdir -p $dir$date$line
 	scp backups@$line:$line.backup $dir$date$line
+
+	echo 'Copying Export'
 	scp backups@$line:$line.rsc $dir$date$line
 	VAR2=$?
 	echo 'Done'
