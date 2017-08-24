@@ -10,12 +10,12 @@ echo Start
 
 for line in $filelines ; do
 	echo $line
-	scp ~/.ssh/id_dsa.pub backups@$line:/
+	scp ~/.ssh/id_rsa.pub backups@$line:/
 	VAR1=$?
 
 	wait 10
 
-	ssh backups@$line /user ssh-keys import user=backups public-key-file=id_dsa.pub
+	ssh backups@$line /user ssh-keys import user=backups public-key-file=id_rsa.pub
 	VAR2=$?
 	echo "Router :" $line "Key Deploy Finished at :" `date` "Key Copy :" $VAR1 "Key Install :" $VAR2 >> $dir/log.txt
 done
